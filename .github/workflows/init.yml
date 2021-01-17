@@ -1,0 +1,14 @@
+name: CI
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Python
+      run: |
+        wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
+        tar xzvf Python-3.9.1.tgz
